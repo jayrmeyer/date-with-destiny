@@ -5,6 +5,11 @@
     "module": "es2015",
     "types": []
   },
+  "paths": {
+    "jszip": [
+      "../node_modules/jszip/dist/jszip.min.js"
+    ]
+  },
   "exclude": [
     "src/test.ts",
     "**/*.spec.ts"

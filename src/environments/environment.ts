@@ -8,7 +8,8 @@ export const environment = {
     apiUrl: 'https://www.bungie.net/Platform/',
     authUrl: 'https://www.bungie.net/en/OAuth/Authorize',
     clientId: '23391',
-  },production: false
+  },
+  production: false
 };
 
 /*

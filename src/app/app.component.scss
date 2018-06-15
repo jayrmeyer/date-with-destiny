@@ -1,0 +1,21 @@
+.mat-app-background {
+  margin: 0;
+}
+
+.app-navbar {
+  // border: 5px solid goldenrod;
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+}
+
+.app-content{
+  border: 5px solid red;
+  height: 100%;
+}
+
+.flex-container {
+  height: 100vh;
+  // border: 5px solid blue;
+}

@@ -1,0 +1,22 @@
+<div class="adwd-toolbar-theme">
+  <mat-toolbar color="primary" fxLayout='row' fxLayoutAlign="start center">
+      <span>A Date With Destiny</span>
+      <button mat-button >Home</button>
+      <button mat-button >Milestones</button>
+
+      <div fxFlex></div>
+
+      <button mat-button *ngIf="!loggedIn" class="sign-in-button" fxFlexAlign='auto' matTooltip="Still building out the sign in logic"
+        (click)="login()">Sign In</button>
+
+      <button mat-button *ngIf="loggedIn" fxFlexAlign='auto' [matMenuTriggerFor]="menu">
+        <mat-icon>person</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item matTooltip="Still building out the sign out logic" (click)="logout()">
+          <mat-icon>time_to_leave</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+  </mat-toolbar>
+</div>
