@@ -1,14 +1,14 @@
 <div>
-  <div>
+  <div class="search-form" fxLayout="row" fxLayoutAlign="center">
     <mat-form-field>
-      <mat-select placeholder="Platform" [(value)]="membershipType">
+      <mat-select placeholder="Platform" [(value)]="membershipType" required>
         <mat-option [value]="1">XBox</mat-option>
         <mat-option [value]="2">Playstation</mat-option>
         <mat-option [value]="4">Battle.net</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field>
-      <input matInput type="text" placeholder="Enter search id" [(ngModel)]="searchString"/>
+      <input matInput type="text" placeholder="Enter search id" [(ngModel)]="searchString" required/>
       <button mat-button *ngIf="searchString" matSuffix mat-icon-button aria-label="Clear" (click)="searchString=''">
         <mat-icon>close</mat-icon>
       </button>

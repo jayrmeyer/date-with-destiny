@@ -24,10 +24,17 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.searchResults.paginator = this.paginator;
+
+    this.searchString = localStorage.getItem('searchString');
+    this.membershipType = + localStorage.getItem('membershipType');
   }
 
   search(): void {
     if (!this.searchString || this.searchString === '') { return; }
+    if (!this.membershipType || this.membershipType === 0) { return; }
+
+    localStorage.setItem('searchString', this.searchString);
+    localStorage.setItem('membershipType', this.membershipType.toString());
 
     this.bungieService.searchDestinyPlayer(this.membershipType, this.searchString).subscribe(res => {
       this.resultUser = <UserInfoCard[]>res.Response;
@@ -38,14 +45,13 @@ export class HomeComponent implements OnInit {
         this.msg = '';
       }
     });
-
-    // this.bungieService.searchUsers(this.searchString).subscribe(res => {
-    //   this.searchResults = new MatTableDataSource<GeneralUser>(res.Response);
-    // });
   }
 
   clear(): void {
     this.searchString = '';
+    localStorage.removeItem('searchString');
+    this.membershipType = 0;
+    localStorage.removeItem('membershipType');
   }
 
 }
